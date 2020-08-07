@@ -1,19 +1,24 @@
 <template>
 	<view class="container">
+		<view class="button-container">
 
-		<CircleButton type="primary" class="clock">
-			<view @click="navigateToDetail">
-				打卡
-			</view>
-		</CircleButton>
+			<circle-button :type="this.$store.state.hasCommit?'primary':'danger'" class="clock">
+				<view @click="navigateToDetail">
+					<text v-if="this.$store.state.hasCommit">已打卡</text>
+					<text v-else>未打卡</text>
+				</view>
+			</circle-button>
 
-
-		<!-- 		
-		<button type="default" id="doit">
-			打卡
-		</button> -->
-
+		</view>
+		<view class="center">
+			<text>上次打卡时间</text>
+			<text>{{lastTime}}</text>
+		</view>
 	</view>
+
+
+
+
 </template>
 
 <script>
@@ -21,7 +26,7 @@
 	export default {
 		data() {
 			return {
-
+				lastTime:"2020-08-07"
 			}
 		},
 		components: {
@@ -32,7 +37,7 @@
 				uni.navigateTo({
 					url: '../detail/detail',
 					animationType: 'pop-in',
-					animationDuration: 200
+					animationDuration: 100
 				})
 			},
 		}
@@ -41,12 +46,16 @@
 
 <style lang="scss">
 	.container {
-		padding: 20px;
-		font-size: 14px;
-		line-height: 24px;
 
-		.clock {
-			margin: 0 auto;
+
+		.button-container {
+			padding: 40rpx;
+			font-size: 16rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.clock {}
 		}
 	}
 </style>

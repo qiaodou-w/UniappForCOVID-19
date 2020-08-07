@@ -16,7 +16,13 @@
 	export default {
 		data() {
 			return {
-				list: []
+				list: [{
+					id: 2017212986,
+					name: "王意然",
+					temperure: 36.5,
+					location: "重庆市渝北区",
+					date: "2020-08-07 22:32:30"
+				}]
 			}
 		},
 		onLoad() {

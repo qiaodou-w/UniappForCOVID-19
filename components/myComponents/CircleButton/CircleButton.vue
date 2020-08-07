@@ -51,7 +51,7 @@
 	}
 	
 	.danger {
-		background-color: #CCCCCC;
+		background-color: #f00004;
 	}
 	
 
