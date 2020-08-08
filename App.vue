@@ -19,6 +19,13 @@ export default {
 	font-family: uniicons;
 	src: url('/static/uni.ttf');
 }
+
+.clearfix::after,
+.clearfix::before{
+	display: table;
+	content: '';
+	clear: both;
+}
 /* #endif */
 
 
