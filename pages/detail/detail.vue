@@ -30,7 +30,7 @@
 		</addrPicker>
 		
 		<view class="buttons">
-			<button :class= "commitStatus" type="default" @click="commit" :disabled="this.$store.state.hasCommit">
+			<button :class= "commitStatus" type="default" @click="commit" :disabled="hasCommit">
 				{{hasCommit?'今日已打卡':'打卡'}}
 			</button>
 		</view>
@@ -39,6 +39,7 @@
 
 <script>
 	import addrPicker from "../../components/simple-address/simple-address.vue"
+	import { mapState, mapActions, mapMutations } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -79,12 +80,13 @@
 			
 	},
 	computed: {
+		
+		...mapState({
+			hasCommit: state => state.hasCommit
+		}),
 		commitStatus: function() {
 			return this.$store.state.hasCommit ? "commit has-commit" : "commit n-commit" 
 		},
-		hasCommit: function() {
-			return this.$store.state.hasCommit
-		}
 	},
 	components: {
 		addrPicker

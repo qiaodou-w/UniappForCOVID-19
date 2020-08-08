@@ -2,9 +2,9 @@
 	<view class="container">
 		<view class="button-container">
 
-			<circle-button :type="this.$store.state.hasCommit?'primary':'danger'" class="clock">
+			<circle-button :type="hasCommit?'primary':'danger'" class="clock">
 				<view @click="navigateToDetail">
-					<text v-if="this.$store.state.hasCommit">已打卡</text>
+					<text v-if="hasCommit">已打卡</text>
 					<text v-else>未打卡</text>
 				</view>
 			</circle-button>
@@ -23,6 +23,7 @@
 
 <script>
 	import CircleButton from "../../components/myComponents/CircleButton/CircleButton.vue"
+	import { mapState, mapActions, mapMutations } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -40,6 +41,12 @@
 					animationDuration: 100
 				})
 			},
+		},
+		computed: {
+			...mapState({
+				hasCommit: state => state.hasCommit
+			})
+			
 		}
 	}
 </script>
