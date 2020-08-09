@@ -11,8 +11,7 @@
 
 		</view>
 		<view class="center">
-			<text>上次打卡时间</text>
-			<text>{{lastTime}}</text>
+			<text>上次打卡时间: {{lastTime}}</text>
 		</view>
 	</view>
 
@@ -63,6 +62,15 @@
 			align-items: center;
 
 			.clock {}
+		}
+		
+		.center {
+			text-align: center;
+			
+			text {
+				display: block;
+				padding: 20rpx;
+			}
 		}
 	}
 </style>

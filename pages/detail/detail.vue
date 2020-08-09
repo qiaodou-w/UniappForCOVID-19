@@ -77,8 +77,6 @@
 					isHighlevel: 0,
 					isTouch: 0,
 					isCough: 0
-					
-					
 				},
 
 				
