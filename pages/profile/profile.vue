@@ -92,7 +92,7 @@
 				width: 750rpx;
 			  padding: 20rpx;
 				padding-bottom: 0;
-				font-size: 28rpx;
+				font-size: 29rpx;
 				
 				text {
 					padding: 6rpx 0;
