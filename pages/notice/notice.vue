@@ -36,7 +36,7 @@
 		methods: {
 			async getList() {
 				const res = await this.$myRequest({
-					url: '/'
+					url: '/notice'
 				})
 				this.list = res.data
 				console.log(res)

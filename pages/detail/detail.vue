@@ -85,21 +85,24 @@
 			}
 		},
 		methods: {
-			commit() {
-				this.$store.commit('commit')
-				uni.showModal({
-					content: "打卡成功"
-				})
-			},
-
-			formSubmit(e) {
+			
+			async formSubmit(e) {
 				this.$store.commit('commit')
 				console.log('form发生了submit事件，携带数据为：' + JSON.stringify(e.detail.value))
 				var formdata = e.detail.value
+				const res = await this.$myRequest({
+					method: "POST",
+					url: "/detail",
+					data: JSON.stringify(formdata)
+				})
+				
 				uni.showModal({
 					content: '表单数据内容：' + JSON.stringify(formdata),
 					showCancel: false
 				});
+				uni.showModal({
+					content: "打卡成功"
+				})
 			},
 			
 			bindPickerChange(e,key) {

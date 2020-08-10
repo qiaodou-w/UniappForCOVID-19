@@ -8,7 +8,6 @@ export const myRequest = (options) => {
 			data: options.data || {},
 
 			success: (res) => {
-				console.log(res)
 				if(res.statusCode!== 200) {
 					return uni.showToast({
 						title:"获取数据失败"
