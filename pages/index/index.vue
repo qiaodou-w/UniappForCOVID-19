@@ -13,6 +13,7 @@
 		<view class="center">
 			<text>上次打卡时间: {{lastTime}}</text>
 		</view>
+		
 	</view>
 
 
@@ -72,5 +73,8 @@
 				padding: 20rpx;
 			}
 		}
+		
+		
+		
 	}
 </style>
